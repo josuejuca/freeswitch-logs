@@ -15,7 +15,7 @@ class RegistrationLog(Base):
     network_port = Column(Integer)
     network_proto = Column(String(10))
     hostname = Column(String(100))
-    metadata = Column(Text, nullable=True)
+    log_metadata = Column(Text, nullable=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
 

@@ -10,7 +10,7 @@ import database
 from pydantic import BaseModel
 
 # Criar tabelas
-models.Base.metadata.create_all(bind=database.engine)
+models.Base.log_metadata.create_all(bind=database.engine)
 
 app = FastAPI(title="FusionPBX Registration Monitor",
              description="API para monitoramento de registros de ramais no FusionPBX",
@@ -44,7 +44,7 @@ class RegistrationLog(BaseModel):
     network_port: int
     network_proto: str
     hostname: str
-    metadata: str = None
+    log_metadata: str = None
     created_at: datetime = None
 
     class Config:
